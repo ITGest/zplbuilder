@@ -1,8 +1,7 @@
 name: zplbuilder
 description: A new Flutter package project.
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/asafeca/zplbuilder
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -11,11 +10,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  hex: any
+  hex: ^0.1.2
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

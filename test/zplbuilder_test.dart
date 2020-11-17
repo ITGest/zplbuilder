@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:zplbuilder/builder/builder.dart';
+import 'package:zplbuilder/src/builder/builder.dart';
 
 void main() {
   test('Add a font string', () {
