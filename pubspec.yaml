@@ -1,7 +1,7 @@
 name: zplbuilder
 description: A new Flutter package project.
-version: 0.0.3
-homepage: https://github.com/asafeca/zplbuilder
+version: 0.0.4
+homepage: https://github.com/ITGest/zplbuilder
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

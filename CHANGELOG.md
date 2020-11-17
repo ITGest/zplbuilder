@@ -8,3 +8,6 @@ was the repository update
 
 ## [0.0.3] - Updates
 We had many files exposed and we think that it's not necessary, so we took them off
+
+## [0.0.4] - Updates
+We had many files exposed and we think that it's not necessary, so we took them off
