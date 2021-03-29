@@ -17,16 +17,18 @@ class ZplPageBuilder implements ZplBuilder {
   String _currentString = '';
 
   @override
-  void addFont({int fontSize = 23, String family = 'A'}) {
+  ZplBuilder addFont({int fontSize = 23, String family = 'A'}) {
     if (_currentString == '') {
       _currentString += '^XA \n';
     }
 
     _currentString += Font(family: family, fontSize: fontSize).build() + '\n';
+
+    return this;
   }
 
   @override
-  void addTitle({String text}) {
+  ZplBuilder addTitle({String text}) {
     if (_currentString == '') {
       _currentString += '^XA \n';
       _verticalPosition += 50;
@@ -41,11 +43,13 @@ class ZplPageBuilder implements ZplBuilder {
                 flex: ZplFlex.left)
             .build() +
         '\n';
+
+    return this;
   }
 
   //THIS IS JUST A KEY-VALUE PAIR (label and its value)
   @override
-  void addRow({String label, String value}) {
+  ZplBuilder addRow({String label, String value}) {
     if (_currentString == '') {
       _currentString += '^XA \n';
       _verticalPosition += 50;
@@ -67,16 +71,20 @@ class ZplPageBuilder implements ZplBuilder {
                 flex: ZplFlex.right)
             .build() +
         '\n';
+
+    return this;
   }
 
   //THIS IS THE MARGIN TOP
   @override
-  void addMargin(int value) {
+  ZplBuilder addMargin(int value) {
     _verticalPosition += value;
+
+    return this;
   }
 
   @override
-  Future<void> addImage(Uint8List imageBytes) async {
+  Future<ZplBuilder> addImage(Uint8List imageBytes) async {
     if (_currentString == '') {
       _currentString += '^XA \n';
     } else {
@@ -94,10 +102,16 @@ class ZplPageBuilder implements ZplBuilder {
 
     _currentString +=
         '^FO50,$_verticalPosition^GFA,$_total,$_total,$_widthBytes,$_asciiCode^FS \n';
+    return this;
   }
 
   @override
   String toString() {
+    return _currentString + '\n ^XZ';
+  }
+
+  @override
+  String build() {
     return _currentString + '\n ^XZ';
   }
 }

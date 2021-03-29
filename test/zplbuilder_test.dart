@@ -3,18 +3,16 @@ import 'package:zplbuilder/src/builder/builder.dart';
 
 void main() {
   test('Add a font string', () {
-    final _builder = ZplPageBuilder();
-    _builder.addFont(fontSize: 30, family: '0');
-    _builder.addTitle(text: 'Encomenda 1');
-    _builder.addMargin(30);
+    final _builtString = ZplPageBuilder()
+        .addFont(fontSize: 30, family: '0')
+        .addTitle(text: 'Encomenda 1')
+        .addMargin(30)
+        .addTitle(text: 'Encomenda 2')
+        .addFont(fontSize: 30, family: 'A')
+        .addMargin(30)
+        .addRow(label: 'Total:', value: '200.0')
+        .build();
 
-    _builder.addTitle(text: 'Encomenda 2');
-
-    _builder.addFont(fontSize: 30, family: 'A');
-
-    _builder.addMargin(30);
-    _builder.addRow(label: 'Total:', value: '200.0');
-
-    print(_builder.toString());
+    print(_builtString);
   });
 }

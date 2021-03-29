@@ -1,9 +1,10 @@
 import 'dart:typed_data';
 
 abstract class ZplBuilder {
-  void addFont({int fontSize = 23, String family});
-  void addTitle({String text});
-  void addRow({String label, String value});
-  void addMargin(int value);
-  Future<void> addImage(Uint8List image);
+  ZplBuilder addFont({int fontSize = 23, String family});
+  ZplBuilder addTitle({String text});
+  ZplBuilder addRow({String label, String value});
+  ZplBuilder addMargin(int value);
+  Future<ZplBuilder> addImage(Uint8List image);
+  String build();
 }
